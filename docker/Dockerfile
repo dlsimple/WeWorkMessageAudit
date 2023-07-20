@@ -1,6 +1,6 @@
 FROM php:7
 LABEL maintainer="dlsimple@gmail.com"
-LABEL Description="PHP7 wework message audit"
+LABEL Description="PHP7 wxwork message audit"
 LABEL version=1.0
 
 WORKDIR /data/docker/php/extension

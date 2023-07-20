@@ -6,7 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'App\\Console\\Commands\\SyncWeworkMessage' => $baseDir . '/app/Console/Commands/SyncWeworkMessage.php',
+    'App\\Console\\Commands\\SyncWxworkMessage' => $baseDir . '/app/Console/Commands/SyncWxworkMessage.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',

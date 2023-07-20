@@ -497,7 +497,7 @@ class ComposerStaticInit633e6013c3d8345da15256ab0663b2eb
     );
 
     public static $classMap = array (
-        'App\\Console\\Commands\\SyncWeworkMessage' => __DIR__ . '/../..' . '/app/Console/Commands/SyncWeworkMessage.php',
+        'App\\Console\\Commands\\SyncWxworkMessage' => __DIR__ . '/../..' . '/app/Console/Commands/SyncWxworkMessage.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',

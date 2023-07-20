@@ -1,14 +1,17 @@
-# WxWorkMessageAudit
+# WxworkMessageAudit
 企业微信会话存档, 基于企业微信C版官方SDK封装的php7的扩展，在laravel 8 下实现schedule，来定时抓取企业微信会话并存到数据库内，暂时只支持在`linux`环境下使用。
 
 ### 官方文档地址
 https://open.work.weixin.qq.com/api/doc/90000/90135/91774
 
+### PHP7的扩展
+https://github.com/pangdahua/php7-wxwork-finance-sdk
+
 ### 使用方式
 #### 设置数据库
-> git clone git@github.com:dlsimple/WxWorkMessageAudit.git
+> git clone git@github.com:dlsimple/WxworkMessageAudit.git
 > 
-> cd WxWorkMessageAudit
+> cd WxworkMessageAudit
 >
 > copy .env.example .env
 
@@ -30,7 +33,7 @@ https://open.work.weixin.qq.com/api/doc/90000/90135/91774
 WXWORK_PRIVATE_KEY 指的是保存wxwork msgaudit 申请的私钥
 
 #### 搭建docker运行环境
-> cd messageaudit
+> cd docker
 >
 > docker build -t xlogical:wxwork-message-audit  .
 >
