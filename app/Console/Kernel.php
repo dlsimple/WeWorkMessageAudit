@@ -15,7 +15,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('xlogical:sync-wework-message')->hourly();
+        $schedule->command('xlogical:sync-wxwork-message')->hourly();
     }
 
     /**

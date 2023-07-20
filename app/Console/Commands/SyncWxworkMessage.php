@@ -6,21 +6,21 @@ use App\Models\WxworkMessage;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
 
-class SyncWeworkMessage extends Command
+class SyncWxworkMessage extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'xlogical:sync-wework-message';
+    protected $signature = 'xlogical:sync-wxwork-message';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'call php7-wxwork-finance to sync wework message to database';
+    protected $description = 'call php7-wxwork-finance to sync wxwork message to database';
 
     /**
      * Create a new command instance.

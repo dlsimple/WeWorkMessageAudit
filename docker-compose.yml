@@ -2,12 +2,12 @@ version: "2"
 
 services:
   php:
-    image: xlogical:wework-message-audit
+    image: xlogical:wxwork-message-audit
     container_name: messageaudit.docker.internal
     environment:
       TZ: Asia/Shanghai
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ./:/wework-message-audit
-    working_dir: /wework-message-audit
+      - ./:/wxwork-message-audit
+    working_dir: /wxwork-message-audit
     entrypoint: [ "/usr/local/bin/php", "artisan", "schedule:work" ]
