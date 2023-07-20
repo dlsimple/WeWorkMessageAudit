@@ -22,14 +22,17 @@ https://open.work.weixin.qq.com/api/doc/90000/90135/91774
 > 
 > WXWORK_SECRET=
 >
-> WXWORK_PRIVATE_KEY=wxwork msgaudit private.pem
+> WXWORK_PRIVATE_KEY=
+>
+> WXWORK_DATA_LIMIT= 每次拉去的数据条数
 
-WXWORK_PRIVATE_KEY 指的是保存wxwork msgaudit 申请的私钥的文件名，需要放在跟.env同级的目录下
+
+WXWORK_PRIVATE_KEY 指的是保存wxwork msgaudit 申请的私钥
 
 #### 搭建docker运行环境
-> cd msgaudit
+> cd messageaudit
 >
-> docker build -t xlogical:wework-msgaudit  .
+> docker build -t xlogical:wework-message-audit  .
 >
 > docker-compose up -d
 
