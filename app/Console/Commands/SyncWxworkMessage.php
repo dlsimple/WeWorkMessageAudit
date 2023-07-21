@@ -66,7 +66,7 @@ class SyncWxworkMessage extends Command
                     continue;
                 }
 
-                if(in_array($decrypt_message['msgtype'], ['location','emotion', 'image', 'file', 'disagree', 'voiptext', 'weapp', 'video', 'mixed'])){
+                if(in_array($decrypt_message['msgtype'], ['location','emotion', 'image', 'file', 'disagree', 'voiptext', 'weapp', 'video'])){
                     Log::info($decrypt_message, ['todo']);
                     continue;
                 }
@@ -79,6 +79,12 @@ class SyncWxworkMessage extends Command
                     $content = json_encode($decrypt_message['chatrecord']['item']);
                 }elseif($decrypt_message['msgtype'] == 'link') {
                     $content = json_encode($decrypt_message['link']);
+                }elseif($decrypt_message['msgtype'] == 'redpacket') {
+                    $content = json_encode($decrypt_message['redpacket']);
+                }elseif($decrypt_message['msgtype'] == 'mixed') {
+                    $content = json_encode($decrypt_message['mixed']);
+                }elseif($decrypt_message['msgtype'] == 'external_redpacket') {
+                    $content = json_encode($decrypt_message['redpacket']);
                 }else {
                     Log::info($decrypt_message, ['todo']);
                     continue;
