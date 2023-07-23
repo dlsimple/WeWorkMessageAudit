@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Models\WxworkMessage;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Arr;
 
 class SyncWxworkMessage extends Command
 {
@@ -62,32 +63,44 @@ class SyncWxworkMessage extends Command
                 $decrypt_message = json_decode($wxworkFinance->decryptData($decryptRandKey, $encrypt_message['encrypt_chat_msg']), true);
 
                 if(in_array($decrypt_message['action'], ['recall', 'switch'])) {
-                    Log::info($decrypt_message, ['todo']);
-                    continue;
-                }
-
-                if(in_array($decrypt_message['msgtype'], ['location','emotion', 'image', 'file', 'disagree', 'voiptext', 'weapp', 'video'])){
-                    Log::info($decrypt_message, ['todo']);
                     continue;
                 }
 
                 if($decrypt_message['msgtype'] == 'text') {
-                    $content = $decrypt_message['text']['content'];
+                    $content =  $decrypt_message['text']['content'];
                 }elseif($decrypt_message['msgtype'] == 'markdown') {
                     $content = $decrypt_message['info']['content'];
-                }elseif($decrypt_message['msgtype'] == 'chatrecord') {
-                    $content = json_encode($decrypt_message['chatrecord']['item']);
-                }elseif($decrypt_message['msgtype'] == 'link') {
-                    $content = json_encode($decrypt_message['link']);
-                }elseif($decrypt_message['msgtype'] == 'redpacket') {
-                    $content = json_encode($decrypt_message['redpacket']);
-                }elseif($decrypt_message['msgtype'] == 'mixed') {
-                    $content = json_encode($decrypt_message['mixed']);
-                }elseif($decrypt_message['msgtype'] == 'external_redpacket') {
-                    $content = json_encode($decrypt_message['redpacket']);
-                }else {
-                    Log::info($decrypt_message, ['todo']);
-                    continue;
+                }else{
+                    $msg_type_key = [
+                        'image' => 'image',
+                        'voice' => 'voice',
+                        'video' => 'video',
+                        'card' => 'card',
+                        'location' => 'location',
+                        'emotion' => 'emotion',
+                        'file' => 'file',
+                        'link' => 'link',
+                        'weapp' => 'weapp',
+                        'chatrecord' => 'chatrecord',
+                        'todo' => 'todo',
+                        'vote' => 'vote',
+                        'collect' => 'collect',
+                        'redpacket' => 'redpacket',
+                        'meeting' => 'meeting', 
+                        'mixed' => 'mixed.item',
+                        'docmsg' => 'doc',
+                        'news' => 'info.item',
+                        'calendar' => 'calendar',
+                        'meeting_voice_call' => 'meeting_voice_call',
+                        'voip_doc_share' => 'voip_doc_share',
+                        'external_redpacket' => 'redpacket',
+                        'sphfeed'=>'sphfeed',
+                        'voiptext' => 'info',
+                        'qydiskfile' => 'info',
+                        'agree' => 'agree',
+                        'disagree' => 'disagree'
+                    ];
+                    $content = json_encode(Arr::get($decrypt_message, $msg_type_key[$decrypt_message['msgtype']]));
                 }
 
                 WxworkMessage::updateOrCreate(
