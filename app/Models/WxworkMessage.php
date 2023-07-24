@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class WxworkMessage extends Model
 {
     use HasFactory;
+
     protected $guarded = [];
 
     protected $casts = [
