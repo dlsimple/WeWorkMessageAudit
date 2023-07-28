@@ -119,7 +119,7 @@ class SyncWxworkMessage extends Command
                         'encrypt_content' => $encrypt_message,
                     ]
                 );
-                Log::info('sync wxwork message success'.now(), ['msgid' => $encrypt_message['msgid']]);
+                Log::info('sync wxwork message success @ '.now(), ['msgid' => $encrypt_message['msgid']]);
             }
 
         } catch (\WxworkFinanceSdkException $e) {
