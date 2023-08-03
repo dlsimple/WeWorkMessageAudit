@@ -469,12 +469,10 @@ class ComposerStaticInit633e6013c3d8345da15256ab0663b2eb
         'Database\\Seeders\\' => 
         array (
             0 => __DIR__ . '/../..' . '/database/seeders',
-            1 => __DIR__ . '/..' . '/laravel/pint/database/seeders',
         ),
         'Database\\Factories\\' => 
         array (
             0 => __DIR__ . '/../..' . '/database/factories',
-            1 => __DIR__ . '/..' . '/laravel/pint/database/factories',
         ),
         'Cron\\' => 
         array (
@@ -495,7 +493,6 @@ class ComposerStaticInit633e6013c3d8345da15256ab0663b2eb
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
-            1 => __DIR__ . '/..' . '/laravel/pint/app',
         ),
     );
 
