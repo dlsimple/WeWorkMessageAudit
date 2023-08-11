@@ -497,7 +497,7 @@ class ComposerStaticInit633e6013c3d8345da15256ab0663b2eb
     );
 
     public static $classMap = array (
-        'App\\Console\\Commands\\SyncWxworkMessage' => __DIR__ . '/../..' . '/app/Console/Commands/SyncWxworkMessage.php',
+        'App\\Console\\Commands\\SyncWecomMessage' => __DIR__ . '/../..' . '/app/Console/Commands/SyncWecomMessage.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
@@ -511,7 +511,7 @@ class ComposerStaticInit633e6013c3d8345da15256ab0663b2eb
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
-        'App\\Models\\WxworkMessage' => __DIR__ . '/../..' . '/app/Models/WxworkMessage.php',
+        'App\\Models\\WecomMessage' => __DIR__ . '/../..' . '/app/Models/WecomMessage.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',

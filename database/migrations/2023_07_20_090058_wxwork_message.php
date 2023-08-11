@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class WxworkMessage extends Migration
+class WecomMessage extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class WxworkMessage extends Migration
      */
     public function up()
     {
-        Schema::create('wxwork_messages', function (Blueprint $table) {
+        Schema::create('wecom_messages', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('seq');
             $table->string('action', 10);

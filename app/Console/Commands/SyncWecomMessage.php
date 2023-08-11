@@ -2,19 +2,19 @@
 
 namespace App\Console\Commands;
 
-use App\Models\WxworkMessage;
+use App\Models\WecomMessage;
 use Illuminate\Console\Command;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Log;
 
-class SyncWxworkMessage extends Command
+class SyncWecomMessage extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'xlogical:sync-wxwork-message';
+    protected $signature = 'xlogical:sync-wecom-message';
 
     /**
      * The console command description.
@@ -44,7 +44,7 @@ class SyncWxworkMessage extends Command
         $secret = config('messageaudit.secret');
         $privateKey = config('messageaudit.private_key');
         $limit = config('messageaudit.data_limit');
-        $seq = WxworkMessage::max('seq');
+        $seq = WecomMessage::max('seq');
 
         try {
             $wxworkFinance = new \WxworkFinanceSdk($corp_id, $secret);
@@ -104,7 +104,7 @@ class SyncWxworkMessage extends Command
                     $content = json_encode(Arr::get($decrypt_message, $msg_type_key[$decrypt_message['msgtype']]));
                 }
 
-                WxworkMessage::updateOrCreate(
+                WecomMessage::updateOrCreate(
                     ['msgid' => $encrypt_message['msgid']],
                     [
                         'seq' => $encrypt_message['seq'],
