@@ -2,7 +2,7 @@ version: "2"
 
 services:
   php:
-    image: xlogical:wxwork-message-audit
+    image: xlogical/php7-wxwork:latest
     container_name: messageaudit.docker.internal
     environment:
       TZ: Asia/Shanghai
