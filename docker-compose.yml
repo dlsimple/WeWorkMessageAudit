@@ -4,6 +4,7 @@ services:
   php:
     image: xlogical/php7-wxwork:latest
     container_name: messageaudit.docker.internal
+    restart: always
     environment:
       TZ: Asia/Shanghai
     volumes:
